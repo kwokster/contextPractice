@@ -5,7 +5,7 @@ const Field = () => {
     // static contextType = LanguageContext;
     const language = useContext(LanguageContext);
 
-    const text = language === 'english' ? 'Name' : 'Naam';
+    const text = language === 'english' ? 'Name' : 'Nom';
     return (
         <div className="ui field">
             <label>{text}</label>

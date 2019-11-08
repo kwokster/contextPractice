@@ -12,7 +12,7 @@ const Button = () => {
     //we always provide one child to consumer and this child will always be a function
     
     const renderSubmit = (value) => {
-        return value === 'english' ? 'Submit' : 'Voorleggen';
+        return value === 'english' ? 'Submit' : 'Soumettre';
     }
     const renderButton = (color) => {
         return (
