@@ -1,35 +1,39 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import UserCreate from './UserCreate';
 import LanguageContext from '../contexts/LanguageContext';
 import ColorContext from '../contexts/ColorContext';
+import LanguageSelector from '../components/LanguageSelector';
 
-const App = () => {
-  // state = { language: 'english'};
-  const [language, setLanguage] = useState('english');
+class App extends React.Component {
+  state = { language: 'english' };
+  // const [language, setLanguage] = useState('english');
 
   // const preRenderFunc = (() => {
   //   console.log('hello');
   // })();
 
-  return (
-    <div className="ui container">
-      {/* {console.log('inside render')} */}
-      <div>
-        Select a language:
-        <i className="flag us" onClick={() => setLanguage('english')} />
-        <i className="flag fr" onClick={() => setLanguage('french')} />
-      </div>
-      {/* Must be called value */}
-      {/* No difference how you wrap the providers as long as they wrap the UserCreate component */}
-      <ColorContext.Provider value="primary">
-        <LanguageContext.Provider value={language}>
-          <UserCreate />
-        </LanguageContext.Provider>
-      </ColorContext.Provider>
-    </div>
-  );
-}
+  onLanguageChange = language => {
+    this.setState({
+      language
+    });
+  };
 
+  render() {
+    return (
+      <div className="ui container">
+        {/* {console.log('inside render')} */}
+        <LanguageSelector onLanguageChange={this.onLanguageChange} />
+        {/* Must be called value */}
+        {/* No difference how you wrap the providers as long as they wrap the UserCreate component */}
+        <ColorContext.Provider value="primary">
+          <LanguageContext.Provider value={this.state.language}>
+            <UserCreate />
+          </LanguageContext.Provider>
+        </ColorContext.Provider>
+      </div>
+    );
+  }
+}
 
 export default App;
 

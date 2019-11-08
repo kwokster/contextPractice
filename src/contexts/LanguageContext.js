@@ -7,5 +7,5 @@
 import React from 'react';
 //This is all we have to do to create a context obj.
 //we can create a default value by passing it directly into the createContext call.
-//The default obj can be anything that's js.
+//The default obj can be anything that's js (ex: obj, array).
 export default React.createContext('english');
