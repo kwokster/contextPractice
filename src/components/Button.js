@@ -11,14 +11,14 @@ const Button = () => {
     //when we are using a consumer, we do not have to specify a contextType
     //we always provide one child to consumer and this child will always be a function
     
-    const renderSubmit = (value) => {
-        return value === 'english' ? 'Submit' : 'Soumettre';
+    const renderSubmit = (language) => {
+        return language === 'english' ? 'Submit' : 'Soumettre';
     }
     const renderButton = (color) => {
         return (
             <button className={`ui button ${color}`}>
                 <LanguageContext.Consumer>
-                    {(value) => renderSubmit(value)}
+                    {({ language }) => renderSubmit(language)}
                 </LanguageContext.Consumer>
             </button>
         );

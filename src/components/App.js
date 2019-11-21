@@ -42,7 +42,7 @@ export default App;
 //2 ways to get information into Context object (source of data):
 //default value
 //Parent component (Provider)
-//2 ways to get information out thing that uses data:
+//2 ways to get information out to thing that uses data:
 //this.context
 //Consumer
 

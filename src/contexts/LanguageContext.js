@@ -31,4 +31,13 @@ export class LanguageStore extends Component {
   }
 }
 
+// export const LanguageStore = (props) => {
+//   const [ language, setLanguage ] = useState('english');
+//   return (
+//     <Context.Provider value={{language, onLanguageChange: () => setLanguage(language) }}>
+//       {props.children}
+//     </Context.Provider>
+//   )
+// }
+
 export default Context;
